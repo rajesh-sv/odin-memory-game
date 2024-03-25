@@ -1,0 +1,8 @@
+.score-card {
+  grid-area: "score";
+  text-align: right;
+}
+
+.score-card h2 {
+  margin: 0;
+}

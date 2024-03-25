@@ -1,9 +1,14 @@
+import { useState } from "react"
 import "../styles/App.css"
+import Header from "./Header"
+import Score from "./Score"
 
 function App() {
+  const [score, setScore] = useState(0)
   return (
     <>
-      <h1>Hi</h1>
+      <Header />
+      <Score score={score} />
     </>
   )
 }
