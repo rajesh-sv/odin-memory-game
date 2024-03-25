@@ -1,5 +1,5 @@
 .score-card {
-  grid-area: "score";
+  grid-area: score;
   text-align: right;
 }
 

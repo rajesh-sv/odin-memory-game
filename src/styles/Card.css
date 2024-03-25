@@ -1,0 +1,21 @@
+.card {
+  flex: 0 0 auto;
+  display: flex;
+  flex-direction: column;
+  transition: transform 400ms ease;
+  border-radius: 10px;
+  box-shadow: 4px 4px 8px 4px rgba(93, 93, 93, 0.2);
+}
+
+.card:hover {
+  transform: scale(1.02, 1.02);
+  transition: transform 200ms ease;
+  cursor: pointer;
+}
+
+.pokemon-image {
+  background-color: gold;
+  width: 250px;
+  height: 250px;
+  border-radius: 10px;
+}
