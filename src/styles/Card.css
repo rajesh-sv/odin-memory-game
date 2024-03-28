@@ -14,8 +14,7 @@
 }
 
 .pokemon-image {
-  background-color: gold;
   width: 250px;
-  height: 250px;
+  height: auto;
   border-radius: 10px;
 }

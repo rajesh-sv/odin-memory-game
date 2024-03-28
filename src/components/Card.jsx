@@ -1,10 +1,19 @@
 import "../styles/Card.css"
 
-export default function Card() {
+export default function Card({
+  pokemonName,
+  pokemonImageUrl,
+  handleCardClick,
+}) {
   return (
     <div className="card">
-      <div className="pokemon-image"></div>
-      <p className="pokemon-name">Arceus</p>
+      <img
+        className="pokemon-image"
+        src={pokemonImageUrl}
+        alt={"Image of " + pokemonName}
+        onClick={() => handleCardClick(pokemonName)}
+      />
+      <p className="pokemon-name">{pokemonName}</p>
     </div>
   )
 }

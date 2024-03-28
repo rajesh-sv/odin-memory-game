@@ -1,13 +1,17 @@
 import "../styles/CardsContainer.css"
 import Card from "./Card"
 
-export default function CardsContainer() {
+export default function CardsContainer({ pokemonList, handleCardClick }) {
   return (
     <div className="cards-container">
-      <Card />
-      <Card />
-      <Card />
-      <Card />
+      {pokemonList.map((pokemon) => (
+        <Card
+          key={pokemon.name}
+          pokemonName={pokemon.name}
+          pokemonImageUrl={pokemon.imageUrl}
+          handleCardClick={handleCardClick}
+        />
+      ))}
     </div>
   )
 }
