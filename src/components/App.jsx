@@ -8,6 +8,8 @@ import pokemonList from "./data.js"
 function App() {
   const [pokemonsClicked, setPokemonsClicked] = useState(new Set())
   const [bestScore, setBestScore] = useState(0)
+  const [gameOver, setGameOver] = useState(false)
+
   const handleCardClick = useCallback(
     (pokemonName) => {
       function shuffle(arr) {
@@ -22,7 +24,7 @@ function App() {
       shuffle(pokemonList)
 
       if (pokemonsClicked.has(pokemonName)) {
-        setPokemonsClicked(new Set())
+        setGameOver(true)
       } else {
         pokemonsClicked.add(pokemonName)
         setPokemonsClicked(new Set(pokemonsClicked))
@@ -32,6 +34,25 @@ function App() {
     },
     [pokemonsClicked, bestScore],
   )
+
+  if (gameOver) {
+    return (
+      <dialog open>
+        <p>Your current score: {pokemonsClicked.size}</p>
+        <p>Your best score: {bestScore}</p>
+        <form method="dialog">
+          <button
+            onClick={() => {
+              setGameOver(false)
+              setPokemonsClicked(new Set())
+            }}
+          >
+            Close
+          </button>
+        </form>
+      </dialog>
+    )
+  }
 
   return (
     <>
